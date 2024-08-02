@@ -19,7 +19,7 @@ const MainProfile = ({ user }) => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/userPost?email=${user[0]?.email}`)
+    fetch(`https://twit-api-w2fz.onrender.com/userPost?email=${user[0]?.email}`)
       .then(res => res.json())
       .then(data => {
         setPosts(data);
@@ -42,7 +42,7 @@ const MainProfile = ({ user }) => {
         };
         setIsLoading(false);
         if (url) {
-          axios.patch(`http://localhost:5000/userUpdates/${user[0]?.email}`, userCoverImage)
+          axios.patch(`https://twit-api-w2fz.onrender.com/userUpdates/${user[0]?.email}`, userCoverImage)
             .then(response => {
               console.log("Cover image updated:", response.data);
             })
@@ -70,7 +70,7 @@ const MainProfile = ({ user }) => {
         };
         setIsLoading(false);
         if (url) {
-          axios.patch(`http://localhost:5000/userUpdates/${user[0]?.email}`, userProfileImage)
+          axios.patch(`https://twit-api-w2fz.onrender.com/userUpdates/${user[0]?.email}`, userProfileImage)
             .then(response => {
               console.log("Profile image updated:", response.data);
             })

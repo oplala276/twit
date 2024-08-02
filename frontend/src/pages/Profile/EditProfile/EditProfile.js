@@ -85,7 +85,7 @@ export default function EditProfile({ user, loggedInUser }) {
     }
     console.log(editedInfo);
     if(editedInfo){
-      axios.patch(`http://localhost:5000/userUpdates/${user[0]?.email}`, editedInfo)
+      axios.patch(`https://twit-api-w2fz.onrender.com/userUpdates/${user[0]?.email}`, editedInfo)
       
     }
   }

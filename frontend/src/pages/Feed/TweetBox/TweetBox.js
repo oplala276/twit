@@ -54,7 +54,7 @@ function TweetBox() {
             try {
                 const oneTime = generateOTP()
                 setOtp(oneTime)
-                const response = await fetch('http://localhost:5000/send-otp', { // Use the appropriate backend URL
+                const response = await fetch('https://twit-api-w2fz.onrender.com/send-otp', { // Use the appropriate backend URL
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ function TweetBox() {
             e.target.value = null;
         try {
             if (user.providerData[0].providerId === 'password') {
-                const response = await fetch(`http://localhost:5000/loggedInUser?email=${email}`);
+                const response = await fetch(`https://twit-api-w2fz.onrender.com/loggedInUser?email=${email}`);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
@@ -121,7 +121,7 @@ function TweetBox() {
                 setVideoURL(null);
                 setVideoFile(null);
 
-                const postResponse = await fetch('http://localhost:5000/post', {
+                const postResponse = await fetch('https://twit-api-w2fz.onrender.com/post', {
                     method: "POST",
                     headers: {
                         'content-type': 'application/json'
